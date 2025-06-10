@@ -1,16 +1,4 @@
 services:
-  caddy:
-    image: caddy:alpine
-    restart: unless-stopped
-    container_name: caddy
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./certs:/certs
-      - ./config:/config
-      - ./data:/data
-      - ./sites:/srv
-    network_mode: "host"
-
   onlyoffice-documentserver:
     image: thomisus/onlyoffice-documentserver-unlimited:8.3.3
     restart: always
@@ -27,6 +15,3 @@ services:
       - ./onlyoffice/rabbitmq:/var/lib/rabbitmq
       - ./onlyoffice/redis:/var/lib/redis
       - ./onlyoffice/db:/var/lib/postgresql
-
-    depends_on:
-      - caddy

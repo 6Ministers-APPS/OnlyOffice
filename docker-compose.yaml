@@ -1,6 +1,6 @@
 services:
   onlyoffice-documentserver:
-    image: thomisus/onlyoffice-documentserver-unlimited:8.3.3
+    image: thomisus/onlyoffice-documentserver-unlimited:9.1.0
     restart: always
     environment:
       - JWT_ENABLED=true

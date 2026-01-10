@@ -5,6 +5,7 @@ services:
     environment:
       - JWT_ENABLED=true
       - JWT_HEADER=AuthorizationJwt
+      - JWT_SECRET=${JWT_SECRET}
       
     volumes:
       - ./onlyoffice/logs:/var/log/onlyoffice
@@ -13,3 +14,10 @@ services:
       - ./onlyoffice/rabbitmq:/var/lib/rabbitmq
       - ./onlyoffice/redis:/var/lib/redis
       - ./onlyoffice/db:/var/lib/postgresql
+      
+      networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true

@@ -15,9 +15,4 @@ services:
       - ./onlyoffice/redis:/var/lib/redis
       - ./onlyoffice/db:/var/lib/postgresql
       
-      networks:
-      - coolify
 
-networks:
-  coolify:
-    external: true
